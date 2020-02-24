@@ -1,0 +1,61 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:jest/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "jest",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+              "singleQuote": true,
+              "printWidth": 80,
+              "endOfLine": "lf"
+            }
+        ],
+        "camelcase": "off",
+        "@typescript-eslint/camelcase": [
+            "error",
+            {
+                "properties": "never",
+                "genericType": "never",
+                "ignoreDestructuring": false
+            }
+        ],
+        "@typescript-eslint/typedef": [
+            "error",
+            {
+              "arrayDestructuring": false,
+              "arrowParameter": true,
+              "memberVariableDeclaration": true,
+              "objectDestructuring": false,
+              "parameter": true,
+              "propertyDeclaration": true,
+              "variableDeclaration": false
+            }
+        ]
+    }
+}

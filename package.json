@@ -1,0 +1,84 @@
+{
+	"name": "insert-code",
+	"displayName": "Insert code",
+	"description": "Insert code for VSCode",
+	"version": "0.0.1",
+	"author": "Bluelief",
+	"publisher": "Bluelief",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bluelief/insert-code"
+	},
+	"engines": {
+		"vscode": "^1.42.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.highlightjs",
+		"onCommand:extension.optionCmdA",
+		"onCommand:extension.optionCmdB"
+	],
+	"main": "./build/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.highlightjs",
+				"title": "Insert highlightjs"
+			},
+			{
+				"command": "extension.optionCmdA",
+				"title": "Insert optionCmdA"
+			},
+			{
+				"command": "extension.optionCmdB",
+				"title": "Insert optionCmdB"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.highlightjs",
+				"key": "alt+p"
+			},
+			{
+				"command": "extension.optionCmdA",
+				"key": "alt+o"
+			},
+			{
+				"command": "extension.optionCmdB",
+				"key": "alt+i"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"vsce": "vsce package",
+		"lint": "eslint --ext .js,.ts src/**",
+		"lint-fix": "eslint --ext .js,.ts --fix src/**",
+		"watch": "tsc -watch -p ./",
+		"test": "jest --config=config/jest.config.js"
+	},
+	"devDependencies": {
+		"@types/jest": "^25.1.3",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.42.0",
+		"@typescript-eslint/eslint-plugin": "^2.18.0",
+		"@typescript-eslint/parser": "^2.18.0",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-jest": "^23.8.0",
+		"eslint-plugin-node": "^11.0.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-promise": "^4.2.1",
+		"jest": "^25.1.0",
+		"prettier": "^1.19.1",
+		"ts-jest": "^25.2.1",
+		"typescript": "^3.7.5",
+		"vsce": "^1.73.0",
+		"vscode-test": "^1.3.0"
+	}
+}
